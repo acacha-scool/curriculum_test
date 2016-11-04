@@ -11,6 +11,13 @@
 |
 */
 
+use Scool\Curriculum\Study;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/test', function () {
+    $study = new Study();
+    dd($study);
 });
