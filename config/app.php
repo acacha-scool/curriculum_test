@@ -166,8 +166,9 @@ return [
         /*
          * Package Service Providers...
          */
-
         Scool\Curriculum\Providers\CurriculumServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
+
         //
 
         /*

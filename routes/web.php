@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/profile/tokens', function () {
+        return view('tokens');
+    });
+});
+
 Route::get('/test', function () {
     $study = new Study();
     dd($study);
