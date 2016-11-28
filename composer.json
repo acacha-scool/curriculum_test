@@ -14,7 +14,8 @@
         "acacha/periods": "dev-master",
         "acacha/names": "dev-master",
         "laravel/passport": "^1.0",
-        "scool/foundation": "^0.1.0"
+        "scool/foundation": "dev-master",
+        "scool/ebre_escool_model": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
