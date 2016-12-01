@@ -170,6 +170,7 @@ return [
         Scool\Curriculum\Providers\CurriculumServiceProvider::class,
         Scool\Foundation\Providers\FoundationServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
         //
 
