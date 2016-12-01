@@ -22,7 +22,7 @@ Route::group(['middleware' => 'auth'], function () {
         return view('tokens');
     });
 
-    Route::resource('studies', 'StudiesController');
+//    Route::resource('studies', 'StudiesController');
 
 });
 
