@@ -32,12 +32,30 @@ class CurriculumTest extends TestCase
         $this->assertEquals($departments->count(),CurriculumTest::NUMBER_OF_DEPARTMENTS);
     }
 
+    /**
+     * Check it have a location for every department.
+     * @test
+     */
     public function it_has_a_location_for_every_deparment() {
-
+        foreach (Department::all() as $department) {
+            $this->assertNotNull($department->location_id,'Department ' . $department->name . ' Location: ' . $department->location_id  );
+            $this->seeInDatabase('locations', [
+                'id' => $department->location_id
+            ]);
+        }
     }
 
+    /**
+     * Check it have a head for every department.
+     * @test
+     */
     public function it_has_a_head_for_every_deparment() {
-
+        foreach (Department::all() as $department) {
+            $this->assertNotEmpty($name = $department->head()->name,'Department ' . $department->name . ' Head: ' . $name  );
+            $this->seeInDatabase('users', [
+                'id' => $department->head()->id
+            ]);
+        }
     }
 
     /**
@@ -52,8 +70,25 @@ class CurriculumTest extends TestCase
         $this->assertEquals($studies->count(),CurriculumTest::NUMBER_OF_STUDIES);
     }
 
-    public function it_has_at_least_one_study_for_every_deparment() {
 
+    /**
+     * Check department study submodules
+     *
+     * @test
+     * @group
+     */
+    public function it_have_submodules_for_every_deparment() {
+//        TODO
+    }
+
+    /**
+     *
+     *
+     * @test
+     * @group
+     */
+    public function it_has_at_least_one_study_for_every_deparment() {
+//        TODO
     }
 
     public function it_has_at_least_one_department_for_every_study() {
