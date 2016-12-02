@@ -1,158 +1,68 @@
 <?php
 
-use Scool\Curriculum\Models\Course;
-use Scool\Curriculum\Models\Department;
-use Scool\Curriculum\Models\Module;
-use Scool\Curriculum\Models\Study;
-use Scool\Curriculum\Models\Submodule;
+use Scool\Curriculum\Stats\Stats;
+use \Illuminate\Foundation\Testing\DatabaseMigrations;
 
 /**
- * Class CurriculumTest.
+ * Class CurriculumStatsTest.
  */
-class CurriculumTest extends TestCase
+class CurriculumStatsTest extends TestCase
 {
-    const NUMBER_OF_DEPARTMENTS = 10;
-
-    const NUMBER_OF_STUDIES = 26;
-
-    const NUMBER_OF_COURSES = 43;
-
-    const NUMBER_OF_MODULES = 307;
-
-    const NUMBER_OF_SUBMODULES = 850;
+    use DatabaseMigrations;
 
     /**
-     * See scool database have departments.
-     * @test
+     * It sets model correctly.
      *
+     * @test
      */
-    public function it_has_departments()
+    public function it_sets_model_correctly()
     {
-        $departments = Department::all();
-        $this->assertEquals($departments->count(),CurriculumTest::NUMBER_OF_DEPARTMENTS);
+       Stats::of('Scool\Curriculum\Models\Study');
+       $this->assertInstanceOf(Scool\Curriculum\Models\Study::class,Stats::model());
+       Stats::of(Scool\Curriculum\Models\Study::class);
+       $this->assertInstanceOf(Scool\Curriculum\Models\Study::class,Stats::model());
     }
 
     /**
-     * Check it have a location for every department.
-     * @test
-     */
-    public function it_has_a_location_for_every_deparment() {
-        foreach (Department::all() as $department) {
-            $this->assertNotNull($department->location_id,'Department ' . $department->name . ' Location: ' . $department->location_id  );
-            $this->seeInDatabase('locations', [
-                'id' => $department->location_id
-            ]);
-        }
-    }
-
-    /**
-     * Check it have a head for every department.
-     * @test
-     */
-    public function it_has_a_head_for_every_deparment() {
-        foreach (Department::all() as $department) {
-            $this->assertNotEmpty($name = $department->head()->name,'Department ' . $department->name . ' Head: ' . $name  );
-            $this->seeInDatabase('users', [
-                'id' => $department->head()->id
-            ]);
-        }
-    }
-
-    /**
-     * See scool database have studies.
-     *
-     * @test
-     *
-     */
-    public function it_has_studies()
-    {
-        $studies = Study::all();
-        $this->assertEquals($studies->count(),CurriculumTest::NUMBER_OF_STUDIES);
-    }
-
-
-    /**
-     * Check department study submodules
+     * It throws exception if provided class is not an eloquent model.
      *
      * @test
      * @group
      */
-    public function it_have_submodules_for_every_deparment() {
-//        TODO
-    }
-
-    /**
-     *
-     *
-     * @test
-     * @group
-     */
-    public function it_has_at_least_one_study_for_every_deparment() {
-//        TODO
-    }
-
-    public function it_has_at_least_one_department_for_every_study() {
-
-    }
-
-    /**
-     * See scool database have courses.
-     *
-     * @test
-     *
-     */
-    public function it_has_courses()
+    public function it_throws_exception_if_provided_class_is_not_a_model()
     {
-        $course = Course::all();
-        $this->assertEquals($course->count(),CurriculumTest::NUMBER_OF_COURSES);
+        $this->expectException(RuntimeException::class);
+        Stats::of('StdClass');
     }
 
     /**
-     * See scool database have modules.
+     * It throws exception if provided class does not exists.
      *
      * @test
      *
      */
-    public function it_has_modules()
+    public function it_throws_exception_if_provided_class_does_not_exists()
     {
-        $module = Module::all();
-        $this->assertEquals($module->count(),CurriculumTest::NUMBER_OF_MODULES);
+        $this->expectException(ReflectionException::class);
+        Stats::of('Garbageasdasdaasdasd');
+
     }
 
     /**
-     * See scool database have submodules.
      *
      * @test
-     *
+     * @group failing
      */
-    public function it_has_submodules()
-    {
-        $submodule = Submodule::all();
-        $this->assertEquals($submodule->count(),CurriculumTest::NUMBER_OF_SUBMODULES);
+    public function it_calculates_total_correctly() {
+        factory(Scool\Curriculum\Models\Study::class,50)->create();
+
+        DB::listen(function ($event) {
+            dump($event->sql);
+            dump($event->bindings);
+        });
+        Stats::of(Scool\Curriculum\Models\Study::class);
+
+        $this->assertEquals(50,Stats::total());
     }
-
-    /**
-     * See scool database have teachers.
-     * @test
-     *
-     */
-    public function it_has_teachers()
-    {
-//        $departments = Tea::all();
-//        dd($departments->count());
-//        $this->assertEquals($departments->count(),CurriculumTest::NUMBER_OF_DEPARTMENTS);
-    }
-
-    /**
-     * See scool database have users.
-     * @test
-     *
-     */
-    public function it_has_users()
-    {
-
-
-    }
-
 
 }

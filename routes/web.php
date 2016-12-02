@@ -11,7 +11,9 @@
 |
 */
 
-use Scool\Curriculum\Study;
+use Scool\Curriculum\Stats\Stats;
+use Scool\Curriculum\Models\Study;
+use Scool\Curriculum\Models\Course;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,6 +29,15 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/test', function () {
-    $study = new Study();
-    dd($study);
+
+    DB::listen(function ($event) {
+        dump($event->sql);
+        dump($event->bindings);
+    });
+
+//    $studies = Study::all();
+//    $courses = Course::all();
+//    return $courses;
+    Stats::of(Scool\Curriculum\Models\Study::class);
+    return Stats::total();
 });
