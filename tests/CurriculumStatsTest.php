@@ -2,6 +2,7 @@
 
 use Scool\Curriculum\Stats\Stats;
 use \Illuminate\Foundation\Testing\DatabaseMigrations;
+use Scool\Curriculum\Stats\StudyStats;
 
 /**
  * Class CurriculumStatsTest.
@@ -49,20 +50,24 @@ class CurriculumStatsTest extends TestCase
     }
 
     /**
-     *
+     * It calculates total correctly.
      * @test
-     * @group failing
      */
     public function it_calculates_total_correctly() {
         factory(Scool\Curriculum\Models\Study::class,50)->create();
-
-        DB::listen(function ($event) {
-            dump($event->sql);
-            dump($event->bindings);
-        });
         Stats::of(Scool\Curriculum\Models\Study::class);
-
         $this->assertEquals(50,Stats::total());
+    }
+
+    /**
+     * It calculates total relations correctly.
+     * @test
+     * @group failing
+     */
+    public function it_calculates_total_relations_correctly() {
+        factory(Scool\Curriculum\Models\Study::class,50)->create();
+        StudyStats::of(Scool\Curriculum\Models\Study::class);
+        $this->assertEquals(50,StudyStats::totalLaws());
     }
 
 }
