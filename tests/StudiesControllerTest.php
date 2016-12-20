@@ -77,13 +77,13 @@ class StudiesControllerTest extends TestCase
         //3) Assertions
 
         // Laravel asserts: https://laravel.com/docs/5.3/application-testing#phpunit-assertions
-//assertViewHas
-//assertResponseOk
-//assertRedirectedTo
-//assertRedirectedToRoute
-//assertRedirectedToAction
-//assertSessionHas
-//assertSessionHasErrors
+        //assertViewHas
+        //assertResponseOk
+        //assertRedirectedTo
+        //assertRedirectedToRoute
+        //assertRedirectedToAction
+        //assertSessionHas
+        //assertSessionHasErrors
     }
 
     /**
@@ -93,10 +93,55 @@ class StudiesControllerTest extends TestCase
         $this->login();
         Input::replace($input = ['name' => 'My Title']);
         $this->post('studies',['name' => 'Estudi nou']);
-        dd($this->response);
         $this->assertRedirectedToRoute('studies.create');
     }
 
+    /**
+     * 
+     */
+    public function testStoreValidationFails()
+    {
+//        Input::replace($input = ['name' => '']);
+
+          // TestStore normal
+
+        // The errors should be sent to the view
+        //$this->assertSessionHasErrors(['title']);
+    }
+
+    /**
+     *
+     */
+    public function testUpdate()
+    {
+        // 1) Prepare (login for example), isolate with mocking
+//       mock
+//            ->shouldReceive('create')
+//            ->once();
+//
+//        $this->app->instance(StudyRepository::class, $this->repository);
+
+        //execute
+        //Asserts:
+        //$this->assertRedirectedToRoute('studies.index');
+    }
+
+    public function testDelete()
+    {
+
+        //$this->assertRedirectedToRoute('studies.index');
+    }
+
+    //https://code.tutsplus.com/tutorials/testing-laravel-controllers--net-31456
+    //TODO: assertSessionHas --> Comprovar missatge ok al crear/editar/esborrar
+    //assertSessionHasErrors --> Comprovar validacions és a dir missatges error al editar/crear recursos no vàlids
+    // (p.ex. faltes camps obligatoris)
+
+    // TOTS ELS TESTS AMB MOCKING DE LA BASE DE DADES / REPOSITORI
+
+    /**
+     * Login
+     */
     protected function login()
     {
         $user = factory(App\User::class)->create();

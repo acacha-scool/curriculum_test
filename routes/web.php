@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
         return view('tokens');
     });
     #adminlte_routes
+    Route::get('contact', 'ContactController@index')->name('contact');
+
     Route::get('about', 'AboutController@index')->name('about');
 
     Route::get('course2', 'Course2Controller@index')->name('course2');
