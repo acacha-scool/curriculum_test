@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f0179021dea6f69b26d3dd4ff51875ff",
-    "content-hash": "929e9a3c925ab8f620605c1ebe87c6cb",
+    "hash": "0936a33a94e2d7b49b2106b76527bcc9",
+    "content-hash": "0aeabe623fe6195ee31a902bb39c35fa",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -98,9 +98,14 @@
         {
             "name": "acacha/periods",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/acacha/periods.git",
+                "reference": "f003434424fa273778cb8e056a110efd015b5869"
+            },
             "dist": {
                 "type": "path",
-                "url": "/home/sergi/Code/acacha/periods",
+                "url": "https://api.github.com/repos/acacha/periods/zipball/f003434424fa273778cb8e056a110efd015b5869",
                 "reference": "f003434424fa273778cb8e056a110efd015b5869",
                 "shasum": null
             },
@@ -154,6 +159,54 @@
             "keywords": [
                 "acacha",
                 "periods"
+            ]
+        },
+        {
+            "name": "acacha/stateful-eloquent",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../../acacha/stateful-eloquent",
+                "reference": "8b973aa58f86932c4dab5f5d5f3046f10a862b1b",
+                "shasum": null
+            },
+            "require": {
+                "laravel/framework": "5.3.*",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Acacha\\Stateful\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "MikeRice\\Stateful\\Tests\\": "tests"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Rice",
+                    "email": "mike.hj.rice@gmail.com"
+                },
+                {
+                    "name": "Sergi Tur Badenas",
+                    "email": "sergiturbadenas@gmail.com"
+                }
+            ],
+            "description": "State machines for Eloquent classes",
+            "homepage": "https://github.com/mikerice/stateful-eloquent",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "statemachine"
             ]
         },
         {
@@ -5022,6 +5075,7 @@
         "scool/curriculum": 20,
         "acacha/periods": 20,
         "acacha/names": 20,
+        "acacha/stateful-eloquent": 20,
         "scool/foundation": 20,
         "scool/ebre_escool_model": 20
     },

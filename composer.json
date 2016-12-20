@@ -13,6 +13,7 @@
         "scool/curriculum": "dev-master",
         "acacha/periods": "dev-master",
         "acacha/names": "dev-master",
+        "acacha/stateful-eloquent": "dev-master",
         "laravel/passport": "^1.0",
         "scool/foundation": "dev-master",
         "scool/ebre_escool_model": "dev-master",

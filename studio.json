@@ -1,8 +1,9 @@
 {
     "version": 2,
     "paths": [
-        "../../Code/scool/curriculum",
         "../../Code/acacha/periods",
+        "../../Code/scool/curriculum",
+        "../../acacha/stateful-eloquent",
         "../../scool/ebre_escool_model"
     ]
 }
