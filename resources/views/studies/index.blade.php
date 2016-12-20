@@ -24,63 +24,49 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <div class="alert alert-success alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h4><i class="icon fa fa-check"></i> Done!</h4>
-                            Study create ok!
-                        </div>
-                        <div class="alert alert-danger alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h4><i class="icon fa fa-check"></i> Oops!</h4>
-                            Something is wrong!
-                        </div>
+                        @if(Session::has('message'))
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4><i class="icon fa fa-check"></i> Done!</h4>
+                                {{ session('message') }}
+                            </div>
+                        @endif
+                        {{--<div class="alert alert-danger alert-dismissible">--}}
+                            {{--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>--}}
+                            {{--<h4><i class="icon fa fa-check"></i> Oops!</h4>--}}
+                            {{--Something is wrong!--}}
+                        {{--</div>--}}
 
-                        <form role="form" action="/studies" method="post">
+                        <form role="form" action="/studies" method="post" id="createStudy">
                             <!-- text input -->
                             {{ csrf_field() }}
 
                             <input type="hidden" name="law_id" value="1">
 
-                            @if ($errors->has('name'))
-                                <div class="form-group has-warning">
-                                    <label class="control-label" for="inputWarning"><i class="fa fa-bell-o"></i>Name</label>
-                                    <input type="text" class="form-control" id="inputWarning" placeholder="Name" name="name">
-                                    @foreach ($errors->get('name') as $message)
-                                        <span class="help-block"> {{ $message }}</span>
-                                    @endforeach
-                                </div>
-                            @else
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" class="form-control" placeholder="Name" name="name">
-                                </div>
-                            @endif
+                            <?php
+                            $warning="";
+                            if ($errors->has('name')) {
+                                $warning="has-warning";
+                            }
+                            ?>
 
-
-
-
-                            <input type="submit" value="create">
-
-                            <!-- input states -->
-                            {{--<div class="form-group has-success">--}}
-                                {{--<label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Input with success</label>--}}
-                                {{--<input type="text" class="form-control" id="inputSuccess" placeholder="Enter ...">--}}
-                                {{--<span class="help-block">Help block with success</span>--}}
-                            {{--</div>--}}
-
-                            {{--<div class="form-group has-error">--}}
-                                {{--<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> Input with--}}
-                                    {{--error</label>--}}
-                                {{--<input type="text" class="form-control" id="inputError" placeholder="Enter ...">--}}
-                                {{--<span class="help-block">Help block with error</span>--}}
-                            {{--</div>--}}
-
+                            <div class="form-group {{ $warning }}">
+                                <label for="name" class="control-label">
+                                    @if ($errors->has('name'))
+                                    <i class="fa fa-bell-o"></i>
+                                    @endif
+                                    Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="{{ old('name') }}">
+                                @foreach ($errors->get('name') as $message)
+                                    <span class="help-block"> {{ $message }}</span>
+                                @endforeach
+                            </div>
                         </form>
 
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button class="btn btn-primary" type="submit">Create</button>
+                        <button class="btn btn-primary" type="submit" onclick="document.getElementById('createStudy').submit();">Create</button>
                     </div>
                 </div>
 
