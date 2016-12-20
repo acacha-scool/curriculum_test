@@ -18,7 +18,8 @@
         "scool/foundation": "dev-master",
         "scool/ebre_escool_model": "dev-master",
         "prettus/l5-repository": "^2.6",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "spatie/laravel-menu": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
