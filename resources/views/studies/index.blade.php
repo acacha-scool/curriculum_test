@@ -4,7 +4,6 @@
     Studies
 @endsection
 
-
 @section('main-content')
     <div class="container-fluid spark-screen">
         <div class="row">
@@ -38,14 +37,7 @@
 
                             <input type="hidden" name="law_id" value="1">
 
-                            <?php
-                            $warning="";
-                            if ($errors->has('name')) {
-                                $warning="has-warning";
-                            }
-                            ?>
-
-                            <div class="form-group {{ $warning }}">
+                            <div class="form-group {{ $errors->has('name') ? 'has-warning' : '' }}">
                                 <label for="name" class="control-label">
                                     @if ($errors->has('name'))
                                     <i class="fa fa-bell-o"></i>

@@ -93,11 +93,12 @@ class StudiesControllerTest extends TestCase
         $this->login();
         Input::replace($input = ['name' => 'My Title']);
         $this->post('studies',['name' => 'Estudi nou']);
-        $this->assertRedirectedToRoute('studies.create');
+        $this->assertRedirectedToRoute('studies.index');
+        //assertSessionHas
     }
 
     /**
-     * 
+     *
      */
     public function testStoreValidationFails()
     {
@@ -106,7 +107,7 @@ class StudiesControllerTest extends TestCase
           // TestStore normal
 
         // The errors should be sent to the view
-        //$this->assertSessionHasErrors(['title']);
+        //$this->assertSessionHasErrors(['name']);
     }
 
     /**
@@ -116,20 +117,37 @@ class StudiesControllerTest extends TestCase
     {
         // 1) Prepare (login for example), isolate with mocking
 //       mock
-//            ->shouldReceive('create')
+//            ->shouldReceive('update')
 //            ->once();
 //
 //        $this->app->instance(StudyRepository::class, $this->repository);
 
-        //execute
+        //2) execute
         //Asserts:
         //$this->assertRedirectedToRoute('studies.index');
+        //assertSessionHas --> message
+ 
+    }
+
+    public function testUpdateFails()
+    {
+        // 1) Prepare (login for example), isolate with mocking
+//       mock
+//            ->shouldReceive('update')
+//            ->once();
+//
+//        $this->app->instance(StudyRepository::class, $this->repository);
+
+        //2)execute
+        //Asserts:
+        //$this->assertRedirectedToRoute('studies.index');
+        //assertSessionHasErrors --> message
     }
 
     public function testDelete()
     {
-
         //$this->assertRedirectedToRoute('studies.index');
+        //assertSessionHas --> message
     }
 
     //https://code.tutsplus.com/tutorials/testing-laravel-controllers--net-31456
