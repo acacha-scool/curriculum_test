@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use Acacha\Helpers\Console\Commands\RequestMakeCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Scool\EbreEscoolModel\Console\Commands\MigrateEbreEscool;
@@ -14,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        MigrateEbreEscool::class
+        MigrateEbreEscool::class,
+        RequestMakeCommand::class
     ];
 
     /**

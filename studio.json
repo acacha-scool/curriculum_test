@@ -1,9 +1,13 @@
 {
     "version": 2,
     "paths": [
-        "../../Code/acacha/periods",
-        "../../Code/scool/curriculum",
+        "../../acacha/periods",
+        "../../scool/curriculum",
         "../../acacha/stateful-eloquent",
-        "../../scool/ebre_escool_model"
+        "../../scool/ebre_escool_model",
+        "../../acacha/helpers",
+        "../../AdminLTE/acacha/adminlte-laravel",
+        "../../acacha/names",
+        "../../acacha/user"
     ]
 }

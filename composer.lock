@@ -4,25 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "54309edad505693edac2255a96e79d23",
-    "content-hash": "d257e0895c1990b03c792b57336468c9",
+    "hash": "b319e0d89ac40bf01436f3c3b12cd8a8",
+    "content-hash": "15731dd128be7576bc8f84997aad9c70",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/acacha/adminlte-laravel.git",
-                "reference": "24cdb0a338133c7de39c7c902c011c8e03a9b447"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/acacha/adminlte-laravel/zipball/24cdb0a338133c7de39c7c902c011c8e03a9b447",
-                "reference": "24cdb0a338133c7de39c7c902c011c8e03a9b447",
-                "shasum": ""
+                "type": "path",
+                "url": "../../AdminLTE/acacha/adminlte-laravel",
+                "reference": "b0d594f4584a4a76de68c519c5e6e438a1c541d1",
+                "shasum": null
             },
             "require": {
-                "acacha/helpers": "~0.1",
+                "acacha/helpers": "dev-master",
                 "acacha/user": "~0.2",
                 "creativeorange/gravatar": "~1.0",
                 "illuminate/console": "~5.0",
@@ -45,7 +40,22 @@
                     "Acacha\\AdminLTETemplateLaravel\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Acacha\\AdminLTETemplateLaravel\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "./sandbox_setup.sh;cd sandbox;phpunit"
+                ],
+                "check-style": [
+                    "phpcs -p --standard=PSR2.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ],
+                "fix-style": [
+                    "phpcbf -p --standard=PSR2.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -59,31 +69,25 @@
             "description": "AdminLTE template applied to Laravel Scaffolding",
             "homepage": "https://github.com/acacha/adminlte-laravel",
             "keywords": [
-                "AdminLTE",
                 "acacha",
                 "admin",
                 "admin-lte",
                 "administrator",
+                "adminlte",
                 "bootstrap",
                 "laravel",
                 "template",
                 "theme"
-            ],
-            "time": "2016-12-19 13:23:04"
+            ]
         },
         {
             "name": "acacha/helpers",
-            "version": "0.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/acacha/helpers.git",
-                "reference": "35a60fe05d8007a77833b530479daa7ab7e5794f"
-            },
+            "version": "dev-master",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/acacha/helpers/zipball/35a60fe05d8007a77833b530479daa7ab7e5794f",
-                "reference": "35a60fe05d8007a77833b530479daa7ab7e5794f",
-                "shasum": ""
+                "type": "path",
+                "url": "../../acacha/helpers",
+                "reference": "e84bd9058c7a8acff4e75e90da7b880036899683",
+                "shasum": null
             },
             "require": {
                 "php": "~5.6|~7.0"
@@ -99,11 +103,29 @@
                 }
             },
             "autoload": {
+                "psr-4": {
+                    "Acacha\\Helpers\\": "src"
+                },
                 "files": [
                     "src/helpers.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Acacha\\Helpers\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "check-style": [
+                    "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ],
+                "fix-style": [
+                    "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -121,22 +143,16 @@
                 "acacha",
                 "helpers",
                 "laravel"
-            ],
-            "time": "2016-12-19 11:05:08"
+            ]
         },
         {
             "name": "acacha/names",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/acacha/names.git",
-                "reference": "4012b58dea1e4f093c1e1a9d9d3dac41c5f2c80b"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/acacha/names/zipball/4012b58dea1e4f093c1e1a9d9d3dac41c5f2c80b",
+                "type": "path",
+                "url": "../../acacha/names",
                 "reference": "4012b58dea1e4f093c1e1a9d9d3dac41c5f2c80b",
-                "shasum": ""
+                "shasum": null
             },
             "require": {
                 "laravel/framework": "^5.3"
@@ -147,27 +163,20 @@
                     "Acacha\\Names\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Sergi Tur Badenas",
                     "email": "sergiturbadenas@gmail.com"
                 }
             ],
-            "description": "Provides alternative names to Laravel models.",
-            "time": "2016-11-27 07:25:47"
+            "description": "Provides alternative names to Laravel models."
         },
         {
             "name": "acacha/periods",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/acacha/periods.git",
-                "reference": "f003434424fa273778cb8e056a110efd015b5869"
-            },
             "dist": {
                 "type": "path",
-                "url": "https://api.github.com/repos/acacha/periods/zipball/f003434424fa273778cb8e056a110efd015b5869",
+                "url": "../../acacha/periods",
                 "reference": "f003434424fa273778cb8e056a110efd015b5869",
                 "shasum": null
             },
@@ -1229,16 +1238,16 @@
         },
         {
             "name": "laravel/passport",
-            "version": "v1.0.16",
+            "version": "v1.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "7ed1a0b80c1da9a3bf25eb180068ddd005a82068"
+                "reference": "f2a8af3a48adac02288779f59de95f46fef69b7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/7ed1a0b80c1da9a3bf25eb180068ddd005a82068",
-                "reference": "7ed1a0b80c1da9a3bf25eb180068ddd005a82068",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/f2a8af3a48adac02288779f59de95f46fef69b7a",
+                "reference": "f2a8af3a48adac02288779f59de95f46fef69b7a",
                 "shasum": ""
             },
             "require": {
@@ -1289,7 +1298,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2016-12-03 16:07:20"
+            "time": "2016-12-21 13:51:02"
         },
         {
             "name": "lcobucci/jwt",
@@ -2386,14 +2395,16 @@
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "/home/sergi/Code/scool/curriculum",
-                "reference": "0b8da687d1a6eafce4ccfe5e514a221427dfcd69",
+                "url": "../../scool/curriculum",
+                "reference": "d478ad568e4b03030a91f7acd59455f64ee7a183",
                 "shasum": null
             },
             "require": {
                 "acacha/names": "dev-master",
+                "acacha/stateful-eloquent": "dev-master",
                 "fzaninotto/faker": "^1.6",
                 "laravel/framework": "^5.3",
+                "prettus/l5-repository": "^2.6",
                 "scool/foundation": "dev-master"
             },
             "require-dev": {
@@ -3904,16 +3915,16 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "0.9.6",
+            "version": "0.9.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "65d4ca18e15cb02eeb1e5336f884e46b9b905be0"
+                "reference": "4de7969f4664da3cef1ccd83866c9f59378c3371"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/65d4ca18e15cb02eeb1e5336f884e46b9b905be0",
-                "reference": "65d4ca18e15cb02eeb1e5336f884e46b9b905be0",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/4de7969f4664da3cef1ccd83866c9f59378c3371",
+                "reference": "4de7969f4664da3cef1ccd83866c9f59378c3371",
                 "shasum": ""
             },
             "require": {
@@ -3965,7 +3976,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2016-09-30 12:09:40"
+            "time": "2016-12-19 14:50:55"
         },
         {
             "name": "myclabs/deep-copy",
@@ -4220,16 +4231,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "903fd6318d0a90b4770a009ff73e4a4e9c437929"
+                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/903fd6318d0a90b4770a009ff73e4a4e9c437929",
-                "reference": "903fd6318d0a90b4770a009ff73e4a4e9c437929",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c14196e64a78570034afd0b7a9f3757ba71c2a0a",
+                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a",
                 "shasum": ""
             },
             "require": {
@@ -4279,7 +4290,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-11-28 16:00:31"
+            "time": "2016-12-20 15:22:42"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -5335,6 +5346,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "acacha/admin-lte-template-laravel": 20,
+        "acacha/helpers": 20,
         "scool/curriculum": 20,
         "acacha/periods": 20,
         "acacha/names": 20,
