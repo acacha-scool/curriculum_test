@@ -8,6 +8,7 @@
         "../../acacha/helpers",
         "../../AdminLTE/acacha/adminlte-laravel",
         "../../acacha/names",
-        "../../acacha/user"
+        "../../acacha/user",
+        "../../acacha/l5-repository"
     ]
 }

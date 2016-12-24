@@ -44,6 +44,6 @@ return [
     |
     */
 
-    'src_path' => '/vendor/scool/curriculum/src',
+    'src_path' => base_path() . '/vendor/scool/curriculum/src',
 
 ];
