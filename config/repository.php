@@ -220,6 +220,7 @@ return [
     */
     'generator'  => [
         'basePath'      => base_path(). '/vendor/scool/curriculum/src',
+        'databasePath'  => base_path(). '/vendor/scool/curriculum/database',
         'rootNamespace' => 'Scool\\Curriculum\\',
         'stubsOverridePath' => app_path(),
         'paths'         => [
