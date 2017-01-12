@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        MigrateEbreEscool::class,
+//        MigrateEbreEscool::class,
         RequestMakeCommand::class
     ];
 

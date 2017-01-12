@@ -166,11 +166,12 @@ return [
         /*
          * Package Service Providers...
          */
-        Scool\EbreEscoolModel\Providers\EbreEscoolMigratorServiceProvider::class,
+//        Scool\EbreEscoolModel\Providers\EbreEscoolMigratorServiceProvider::class,
         Scool\Curriculum\Providers\CurriculumServiceProvider::class,
         Scool\Foundation\Providers\FoundationServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
         //
 

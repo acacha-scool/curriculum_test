@@ -234,7 +234,6 @@ return [
             'requests'     => 'Http/Requests',
             'provider'     => 'CurriculumServiceProvider',
             'criteria'     => 'Criteria',
-            'stubsOverridePath' => app_path()
         ]
     ]
 ];

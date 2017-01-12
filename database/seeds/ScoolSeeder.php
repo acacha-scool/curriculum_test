@@ -2,10 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-/**
- * Class DatabaseSeeder.
- */
-class DatabaseSeeder extends Seeder
+class ScoolSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UsersSeeder::class);
-        $this->call(ScoolSeeder::class);
+        passthru( 'mysql -p scool < ~/Code/2dam1617/sql/scool.sql');
     }
 }
