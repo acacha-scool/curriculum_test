@@ -6,11 +6,10 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*",
+        "laravel/framework": "5.4.*",
         "barryvdh/laravel-ide-helper": "^2.2",
         "barryvdh/laravel-debugbar": "^2.3",
         "acacha/admin-lte-template-laravel": "dev-master",
-        "acacha/helpers": "dev-master",
         "scool/curriculum": "dev-master",
         "acacha/periods": "dev-master",
         "acacha/names": "dev-master",
