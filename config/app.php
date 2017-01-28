@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
 //        Scool\EbreEscoolModel\Providers\EbreEscoolMigratorServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
         Scool\Curriculum\Providers\CurriculumServiceProvider::class,
         Scool\Foundation\Providers\FoundationServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,

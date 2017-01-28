@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests;
+
 use Scool\Curriculum\Stats\Stats;
 use \Illuminate\Foundation\Testing\DatabaseMigrations;
 use Scool\Curriculum\Stats\StudyStats;

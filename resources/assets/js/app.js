@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * include Vue and Vue Resource. This gives a great starting point for
@@ -13,8 +12,6 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
-
 Vue.component(
     'passport-clients',
     require('./components/passport/Clients.vue')
@@ -28,6 +25,16 @@ Vue.component(
 Vue.component(
     'passport-personal-access-tokens',
     require('./components/passport/PersonalAccessTokens.vue')
+);
+
+Vue.component(
+    'departments-accordion',
+    require('./components/curriculum/DepartmentsAccordion.vue')
+);
+
+Vue.component(
+    'curriculum-accordion',
+    require('./components/curriculum/CurriculumAccordion.vue')
 );
 
 const app = new Vue({

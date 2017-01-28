@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests;
+
 use Scool\Curriculum\Models\Course;
 use Scool\Curriculum\Models\Department;
 use Scool\Curriculum\Models\Module;

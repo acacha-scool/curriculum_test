@@ -28,6 +28,7 @@ Menu::macro('sidebar', function () {
 //        ->url('http://www.google.com', 'Google')
         ->add(Menu::adminlteSeparator('Acacha Adminlte'))
         #adminlte_menu
+        ->add(Link::toUrl('curriculum', 'Curriculum'))
         ->add(Link::toUrl('profile/tokens', 'Profile/tokens'))
         ->add(Link::toUrl('studies', 'Studies'))
         ->add(Menu::adminlteSeparator('SECONDARY MENU'))

@@ -24,6 +24,11 @@ Route::group(['middleware' => 'auth'], function () {
         return view('tokens');
     });
     #adminlte_routes
+    Route::get('curriculum', function ()    {
+        $data = [];
+        return view('curriculum',$data);
+    })->name('curriculum');
+
 
 });
 
