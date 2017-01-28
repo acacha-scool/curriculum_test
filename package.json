@@ -11,8 +11,8 @@
   "devDependencies": {
     "admin-lte": "^2.3.11",
     "axios": "^0.15.2",
-    "bootstrap-less": "^3.3.8",
-    "bootstrap-sass": "^3.3.7",
+    "bootstrap-less": "3.3.7",
+    "bootstrap-sass": "3.3.7",
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
     "icheck": "^1.0.2",
@@ -24,7 +24,6 @@
     "laravel-mix": "^0.5.0",
     "lodash": "^4.16.2",
     "toastr": "^2.1.2",
-    "vue": "^2.0.1",
-    "vue-resource": "^1.0.3"
+    "vue": "^2.0.1"
   }
 }
