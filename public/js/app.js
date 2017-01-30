@@ -21092,11 +21092,12 @@ var API_URL = 'http://localhost:8080/api/v1/task';
 /* harmony default export */ __webpack_exports__["default"] = {
     data: function data() {
         return {
-            departments: [{ 'name': 'Departament informàtica' }, { 'name': 'Departament Sanitat' }, { 'name': 'Departament Mecanica' }],
+            departments: [{ 'name': 'Departament informàtica' }, { 'name': 'Departament Sanitat' }, { 'name': 'Departament Mecànica' }],
             loading: true
         };
     },
     created: function created() {
+        console.log('test');
         var that = this;
         setTimeout(function () {
             that.fetchDepartments();
@@ -21117,10 +21118,7 @@ var API_URL = 'http://localhost:8080/api/v1/task';
             });
         },
         showConnectionError: function showConnectionError() {
-            var content = document.getElementsByClassName("content-header");
-            toastr.options.target = content;
             toastr.options.positionClass = 'toast-bottom-full-width';
-
             toastr.error('Error connecting to api');
         }
     }
@@ -21981,6 +21979,7 @@ window.Vue = __webpack_require__(8);
  */
 
 window.axios = __webpack_require__(19);
+Vue.prototype.$http = window.axios;
 
 window.axios.defaults.headers.common = {
   'X-Requested-With': 'XMLHttpRequest'

@@ -2501,7 +2501,7 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-laravel-mix@^0.5.0:
+laravel-mix@^0.5.9:
   version "0.5.16"
   resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-0.5.16.tgz#a3b8ed4a836e006757922fd8eeb41ab9fcb6e0a6"
   dependencies:
@@ -4079,11 +4079,11 @@ select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
 
-"semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@~5.3.0:
+"semver@2 || 3 || 4 || 5", "semver@2.x || 3.x || 4 || 5", semver@^5.1.0, semver@~5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
-"semver@2.x || 3.x || 4 || 5", semver@^4.1.0:
+semver@^4.1.0:
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/semver/-/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
 

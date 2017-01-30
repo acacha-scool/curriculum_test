@@ -42,12 +42,13 @@ export default{
             departments: [
                 {'name' : 'Departament informàtica'},
                 {'name' : 'Departament Sanitat'},
-                {'name' : 'Departament Mecanica'},
+                {'name' : 'Departament Mecànica'},
             ],
             loading: true
         }
     },
     created () {
+        console.log('test')
         var that = this
         setTimeout(function () {
           that.fetchDepartments()
@@ -66,10 +67,7 @@ export default{
           })
         },
         showConnectionError: function() {
-            var content = document.getElementsByClassName("content-header");
-            toastr.options.target = content;
             toastr.options.positionClass = 'toast-bottom-full-width';
-
             toastr.error('Error connecting to api')
         }
     }
