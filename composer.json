@@ -9,7 +9,6 @@
         "laravel/framework": "5.4.*",
         "barryvdh/laravel-ide-helper": "^2.2",
         "barryvdh/laravel-debugbar": "^2.3",
-        "acacha/admin-lte-template-laravel": "dev-master",
         "scool/curriculum": "dev-master",
         "acacha/periods": "dev-master",
         "acacha/names": "dev-master",
@@ -24,7 +23,8 @@
         "spatie/laravel-permission": "^1.6",
         "guzzlehttp/guzzle": "^6.2",
         "laravel/tinker": "^1.0",
-        "laravel/browser-kit-testing": "^1.0"
+        "laravel/browser-kit-testing": "^1.0",
+        "acacha/admin-lte-template-laravel": "^5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

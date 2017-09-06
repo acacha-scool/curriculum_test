@@ -2,7 +2,7 @@
     "version": 2,
     "paths": [
         "../../acacha/periods",
-        "../scool/curriculum",
+        "../curriculum",
         "../../acacha/stateful-eloquent",
         "../../scool/ebre_escool_model",
         "../../acacha/helpers",
