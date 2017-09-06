@@ -2,11 +2,10 @@
     "version": 2,
     "paths": [
         "../../acacha/periods",
-        "../../scool/curriculum",
+        "../scool/curriculum",
         "../../acacha/stateful-eloquent",
         "../../scool/ebre_escool_model",
         "../../acacha/helpers",
-        "../../AdminLTE/acacha/adminlte-laravel",
         "../../acacha/names",
         "../../acacha/user",
         "../../acacha/l5-repository"
